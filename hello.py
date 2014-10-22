@@ -1,6 +1,7 @@
 # coding: utf-8
 
 from flask import Flask
+from flask.ext.script import Manager
 
 app = Flask(__name__)
 
@@ -31,4 +32,5 @@ def user_uri(uri):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0")
+    manager = Manager(app)
+    manager.run()
