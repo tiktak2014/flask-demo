@@ -1,34 +1,14 @@
 # coding: utf-8
 
-from flask import Flask
+from flask import Flask, render_template
 from flask.ext.script import Manager
 
 app = Flask(__name__)
 
 
-@app.route("/")
-def index():
-    return "<h1>Hello, Flask!</h1>"
-
-
-@app.route("/user/<name>")
-def user_name(name):
-    return "user_name<br /><h1>Hello, %s!</h1>" % name
-
-
-@app.route("/user/<int:id>")
-def user_id(id):
-    return "user_id<br /><h1>Hello, %s!</h1>" % id
-
-
-@app.route("/goods/<float:total>")
-def goods_total(total):
-    return "goods_total<br /><h1>Hello, %s!</h1>" % total
-
-
-@app.route("/user/<path:uri>")
-def user_uri(uri):
-    return "user_uri<br /><h1>Hello, %s!</h1>" % uri
+@app.route("/<name>")
+def index(name):
+    return render_template("hello.html", name=name)
 
 
 if __name__ == "__main__":
