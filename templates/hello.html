@@ -2,6 +2,22 @@
 
 {% block title %}Flasky{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="css/main.css") }}">
+{% endblock %}
+
 {% block body %}
-<h3>Hello, world!</h3>
+<div class="container">
+  <form action="/form-demo" method="post">
+    <p>
+    <label for="username">Username</label>
+    <input type="input" name="username" id="username">
+    </p>
+    <p>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+    </p>
+    <input type="submit" value="submit">
+  </form>
+</div>
 {% endblock %}
