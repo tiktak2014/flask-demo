@@ -32,17 +32,9 @@ Flasky
 
 {% block content %}
 <div class="container">
-  <div class="page-header">
-    <h1>Hello, {{ name }}!</h1>
-    <a href="{{ url_for("static", filename="css/basic.css") }}">Link</a>
-    {{ moment.lang("es") }}
-    {{ moment(current_time).format("LLL") }}
-    {{ moment(current_time).fromNow(refresh=True) }}
-  </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
 {{ super() }}
-{{ moment.include_moment() }}
 {% endblock %}
